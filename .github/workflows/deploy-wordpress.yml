@@ -21,3 +21,4 @@ jobs:
           port: 22
           script: |
             scp -r Es.2-tws/thewave-theme ec2-user@18.184.245.68:/var/www/html/wp-content/themes/  
+ 
