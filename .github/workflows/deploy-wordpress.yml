@@ -1,0 +1,47 @@
+name: Deploy WordPress Theme
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Copy Theme to EC2 Instance
+        uses: appleboy/ssh-action@master
+        with:
+          host: 18.184.245.68
+          username: ec2-user
+          key:  MIIEogIBAAKCAQEAoV0W3P/SnW8NHDNaYjD7v8g9p0LToBZvP/y4IYXQv8nJGVXk
+bxalNky+SGUX1si/frlym3i7bKvG6kcsEexXUywi3d/TlFoASw+Owo1j0eRsZTbq
+8VXSQmx5pFuwkXtjCTQBXbdwPokSbrV44ypzQmLX61SHw/wPAOrTJ7TRlTCQXMXE
+UwDdWa1ta5SE6GKuSSlpHrMZebYdaDritt7aX2Loi/0sgK+2gE6qVsFHfivqJGJr
+UOYn1P7Jkn5+gcS77hhvJZuQ9hrG6/AVY6q5xZlqVQh/a01d/xyele2yKirPp7Gd
+2OANxIrK2qOm2g8UKUQUBb+evmn06btX88vrjwIDAQABAoIBAB8p7E14NsPi+6Qz
+osQN88DhOk8AUAC99HRmKWWIA33WybjT5s8xj2zCO4mdxJHdqWYfCKxQD9p3/m2m
+mzNG8sKEZqN1I9al3yKf+ZFHXzzdIbYWeh9r1LSxYHjGoH4oV0MiwRTJZaseK+on
+sBYnT6VFk6/GXoYSOw+RSoCDompubBkpagOHueGKtKDD5MeWGSPyjEbmEIy3UbDW
+5CyMmwkUScgju0mJ3lfF51d/S/T06MEN+9KtxA/VIbE5cwkWEcrh/YI93w1WG41C
+TmqvPcemrOdKP7Bfi40zbMtxBPDgniggC+zaBBIRTYe3rpud4UP4x4h3LLRBBM/g
+9p00PrECgYEA7v27kGcFZ9QzQHW/B17nICK09U0wFgEhUqwwFlSXKKktQ14+DWd4
+SApmn/f1+1HhDamqqVV7zO2FR531M/1beS9u4Xh+ECPqOG2lexf+RH88sWFjjwza
+A5lSdy5SdXNhfkA1qPGQN3Cm0cdlZiSFUWh9LtNVB8TijWhkqnjx91cCgYEArNkI
+UXkao6GUWDbPNZVl8HKNH6EAxP9ZdgE5MksqjpXsIG1TnKK1n6hIx2oMDUkOc8AE
+aqc5HDENgrdzdkZ/VGcrULXiuHqMHy60gy1xWTQRl48y91Botz1rS1QnHLf36vwz
+m3yUpcNzChCHUpU1CV1n52q2DKQE57MO/KQTIokCgYB3jGcZyd7zXDuy//Np7Xgy
+JApfNphaOYCAyW9YjEH87fudWnQx4lNRvhot5Syf5gps+jVLdV5zWVE1TPeOZSsv
+yKFvmgV9b2nHhlmj5JGlk/w5Qt05fpVD/Zs50Osgo3HeZKIy+3tHsEtSXqsDWDt0
+SI9uL/q14y/syo6ok81+CwKBgAOoeDeZM4ohAk23oz0EE2s6UWhI9QY2TUNlFTvO
+QXFRFPU+uxVGkEd3vUqTIPwq/qZOewlyzo+dLicFEOmA5nL31//WSZ0T4uFKEMHx
+9UMpCfJGMpLvXbf7Eck/V7CQ6CtN+R2iTlcPwuCEpwiFZeDz3B4WsRGlawEoVfnc
+0xbZAoGAR++MRIlQKrnR/L+g1wOfhFCyjtJrVOhonXUu4GJPndSGwE44YBvJT4Eq
+0+ue1a+/no/nE2dcoRRiMkgU9DpRSSjFmUOyW/2j94WEaaCYQBOnNDemM7NDWjig
+vv+8WFzAljjrUTqQDjAJCXmQkyFLw+BzwTQuHiR7u7uGKsR++zE= 
+          port: 22
+          script: |
+            scp -r Es.2-tws/thewave-theme ec2-user@18.184.245.68:/var/www/html/wp-content/themes/
