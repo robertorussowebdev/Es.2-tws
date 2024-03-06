@@ -17,7 +17,8 @@ jobs:
         with:
           host: 18.184.245.68
           username: ec2-user
-          key:  MIIEogIBAAKCAQEAoV0W3P/SnW8NHDNaYjD7v8g9p0LToBZvP/y4IYXQv8nJGVXk
+          key: -----BEGIN RSA PRIVATE KEY-----
+MIIEogIBAAKCAQEAoV0W3P/SnW8NHDNaYjD7v8g9p0LToBZvP/y4IYXQv8nJGVXk
 bxalNky+SGUX1si/frlym3i7bKvG6kcsEexXUywi3d/TlFoASw+Owo1j0eRsZTbq
 8VXSQmx5pFuwkXtjCTQBXbdwPokSbrV44ypzQmLX61SHw/wPAOrTJ7TRlTCQXMXE
 UwDdWa1ta5SE6GKuSSlpHrMZebYdaDritt7aX2Loi/0sgK+2gE6qVsFHfivqJGJr
@@ -41,7 +42,8 @@ QXFRFPU+uxVGkEd3vUqTIPwq/qZOewlyzo+dLicFEOmA5nL31//WSZ0T4uFKEMHx
 9UMpCfJGMpLvXbf7Eck/V7CQ6CtN+R2iTlcPwuCEpwiFZeDz3B4WsRGlawEoVfnc
 0xbZAoGAR++MRIlQKrnR/L+g1wOfhFCyjtJrVOhonXUu4GJPndSGwE44YBvJT4Eq
 0+ue1a+/no/nE2dcoRRiMkgU9DpRSSjFmUOyW/2j94WEaaCYQBOnNDemM7NDWjig
-vv+8WFzAljjrUTqQDjAJCXmQkyFLw+BzwTQuHiR7u7uGKsR++zE= 
+vv+8WFzAljjrUTqQDjAJCXmQkyFLw+BzwTQuHiR7u7uGKsR++zE=
+-----END RSA PRIVATE KEY-----
           port: 22
           script: |
             scp -r Es.2-tws/thewave-theme ec2-user@18.184.245.68:/var/www/html/wp-content/themes/
